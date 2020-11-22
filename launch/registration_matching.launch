@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--roslaunch pcl_tut registration_matching.launch-->
+
+<launch>
+
+    <!-- From tutorial -->
+
+    <node name="pcl_read" pkg="pcl_tut" type="pcl_read">
+        <!--        <param name="path" value="$(find chapter10_tutorials)/data/test_pcd.pcd" />-->
+    </node>
+
+    <node name="pcl_filter" pkg="pcl_tut" type="pcl_filter">
+    </node>
+
+    <node name="pcl_downsampling" pkg="pcl_tut" type="pcl_downsampling">
+    </node>
+
+    <node name="pcl_matching" pkg="pcl_tut" type="pcl_matching" output="screen">
+    </node>
+
+    <node name="pcl_visualize2" pkg="pcl_tut" type="pcl_visualize2">
+        <remap from="pcl_output" to="pcl_downsampled"/>
+        <remap from="pcl_partitioned" to="pcl_matched"/>
+    </node>
+
+</launch>

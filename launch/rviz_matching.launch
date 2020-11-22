@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--roslaunch pcl_tut rviz_matching.launch-->
+
+<launch>
+
+    <!-- From tutorial -->
+
+    <node name="pcl_read" pkg="pcl_tut" type="pcl_read">
+        <!--        <param name="path" value="$(find chapter10_tutorials)/data/test_pcd.pcd" />-->
+    </node>
+
+    <node name="pcl_filter" pkg="pcl_tut" type="pcl_filter">
+    </node>
+
+    <node name="pcl_downsampling" pkg="pcl_tut" type="pcl_downsampling">
+    </node>
+
+    <node name="pcl_matching" pkg="pcl_tut" type="pcl_matching" output="screen">
+    </node>
+
+	<node pkg="tf"
+		  type="static_transform_publisher"
+		  name="tf_publisher"
+		  args="0 0 0 0 0 0 map odom 10" />
+
+		<node name="rviz" pkg="rviz" type="rviz" respawn="true"
+		    args="-d $(find pcl_tut)/rviz/matching.rviz"
+        />
+
+</launch>
+
+<!-- Expected output -->
+<!-- [ INFO] [1593194965.029065176]: icp tr: -->
+<!--    0.999596    0.015482  -0.0238276    0.612339 -->
+<!--  -0.0153952    0.999874  0.00382191    0.702068 -->
+<!--   0.0238838 -0.00345358    0.999709  0.00384109 -->
+<!--           0           0           0           1 -->

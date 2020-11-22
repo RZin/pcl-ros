@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--roslaunch pcl_tut read_vis.launch-->
+
+<launch>
+
+    <!-- From tutorial -->
+
+    <node name="pcl_read" pkg="pcl_tut" type="pcl_read" output="screen">
+        <!--        <param name="path" value="$(find pcl_tut)/data/test_pcd.pcd" />-->
+    </node>
+
+    <node name="pcl_visualize" pkg="pcl_tut" type="pcl_visualize">
+    </node>
+
+</launch>

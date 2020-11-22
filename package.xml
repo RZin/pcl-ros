@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pcl_tut</name>
+  <version>0.1.0</version>
+  <description>pcl_tut.</description>
+
+  <maintainer email="r.zinovyev@skoltech.ru">roman zinovyev</maintainer>
+
+  <author email="r.zinovyev@skoltech.ru">roman zinovyev</author>
+
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>libpcl-all-dev</build_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+
+  <build_depend>std_msgs</build_depend>
+
+  <exec_depend>libpcl-all</exec_depend>
+</package>
